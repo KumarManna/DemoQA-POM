@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using POM1.PageObjects;
 using BrowserControl;
-using URL_Library;
+using System.Configuration;
 
 
 namespace POM1
@@ -10,7 +10,7 @@ namespace POM1
     {
         public void Open_LogInPage()
         {
-            Open_Url(Library1.LogInPageUrl);
+            Open_Url(ConfigurationManager.AppSettings["URL1"]);
         }
 
         [Test, Category("Log in page")]
@@ -18,13 +18,13 @@ namespace POM1
         {
             var L = new LogInPage(this.driver);
             Open_LogInPage();
-            L.LogIntoApplication();
+            L.LogIntoApplication("LogIn");
             Assert.Pass();
         }
 
         public void Open_TextBoxPage()
         {
-            Open_Url(Library1.TextBoxUrl);
+            Open_Url(ConfigurationManager.AppSettings["URL2"]);
         }
         [Test, Category("TextBox")]
         public void Test2()

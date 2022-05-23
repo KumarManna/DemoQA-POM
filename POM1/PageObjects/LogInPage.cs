@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using POM1.DataAccess;
 
 
 namespace POM1.PageObjects
@@ -27,14 +28,23 @@ namespace POM1.PageObjects
         [FindsBy(How=How.Id,Using = "login")]
         public IWebElement LogIn { get; set; }
 
-        public void LogIntoApplication()
+        public void LogIntoApplication(string TestName)
         {
-            Name.SendKeys("aria");
+            //Name.SendKeys("aria");
+            //Thread.Sleep(200);
+            //Pass.SendKeys("@riaLabel2022");
+            //Thread.Sleep(200);
+            //IJavaScriptExecutor jex = (IJavaScriptExecutor)this.driver;
+            //jex.ExecuteScript("window.scrollBy(0,400)");
+            //LogIn.Click();
+            //Thread.Sleep(5000);
+            var UserData = TestDataAccess.GetTestData(TestName);
+            Name.SendKeys(UserData.username);
             Thread.Sleep(200);
-            Pass.SendKeys("@riaLabel2022");
+            Pass.SendKeys(UserData.password);
             Thread.Sleep(200);
             IJavaScriptExecutor jex = (IJavaScriptExecutor)this.driver;
-            jex.ExecuteScript("window.scrollBy(0,400)");
+            jex.ExecuteScript("window.scrollBy(0,200)");
             LogIn.Click();
             Thread.Sleep(5000);
         }
