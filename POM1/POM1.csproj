@@ -21,9 +21,6 @@
     <Reference Include="BrowserControl">
       <HintPath>..\..\..\Testing Library\TestingLibrary2\TestingLibrary2\BrowserControl\bin\Debug\BrowserControl.dll</HintPath>
     </Reference>
-    <Reference Include="URL Library">
-      <HintPath>..\URL Library\bin\Debug\URL Library.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
