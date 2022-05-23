@@ -39,6 +39,7 @@ namespace POM1.PageObjects
             //LogIn.Click();
             //Thread.Sleep(5000);
             var UserData = TestDataAccess.GetTestData(TestName);
+            Console.WriteLine(UserData.key);
             Name.SendKeys(UserData.username);
             Thread.Sleep(200);
             Pass.SendKeys(UserData.password);
