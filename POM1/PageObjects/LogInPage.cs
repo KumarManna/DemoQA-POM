@@ -10,7 +10,7 @@ using POM1.DataAccess;
 
 namespace POM1.PageObjects
 {
-    class LogInPage
+    public class LogInPage
     {
         readonly IWebDriver driver;
         public LogInPage(IWebDriver driver)
